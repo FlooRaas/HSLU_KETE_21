@@ -82,6 +82,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 hr {
@@ -633,6 +634,10 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  position: sticky;
+  text-align: center;
+  padding-top: 20%;
+  
 }
 
 @media (min-width: 576px) {
