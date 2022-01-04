@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Florian Raschle">
+    <title>KETE 21/22 Pizza Tool</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../HSLU_KETE_21/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../HSLU_KETE_21/bootstrap/css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pizza Service KETE 21/22</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="../HSLU_KETE_21/index.html">Ausloggen</a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="../HSLU_KETE_21/dashboard.html">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../HSLU_KETE_21/orders.html">
+              <span data-feather="file"></span>
+              Bestellungen
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../HSLU_KETE_21/produkte.html">
+              <span data-feather="shopping-cart"></span>
+              Produkte
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="../HSLU_KETE_21/inventar.html">
+              <span data-feather="database"></span>
+              Inventar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../HSLU_KETE_21/kunden.html">
+              <span data-feather="users"></span>
+              Kunden
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="../HSLU_KETE_21/lieferanten.html">
+              <span data-feather="briefcase"></span>
+              Lieferanten
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Gespeicherte Reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Aktueller Monat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Letztes Quartal
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Jahresüberblick
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Produkte</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Teilen</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Exportieren</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            Diese Woche
+          </button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm table-hover">
+          <thead>
+            <h1 class="h5">Produktkatalog inkl. Mengenangaben</h1>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Pizza</th>
+              <th scope="col">Grösse</th>
+              <th scope="col">Pizzateig</th>
+              <th scope="col">Tomatensauce</th>
+              <th scope="col">Mozzarellai</th>
+              <th scope="col">Oregano</th>
+              <th scope="col">Peperoni</th>
+              <th scope="col">Mais</th>
+              <th scope="col">Speck</th>
+              <th scope="col">Pouletfleisch</th>
+              <th scope="col">BBQ Sauce</th>
+              <th scope="col">Black Tigers</th>
+              <th scope="col">Salami</th>
+              <th scope="col">Sardellen</th>
+              <th scope="col">Oliven</th>
+              <th scope="col">Knoblauch</th>
+              <th scope="col">Hinterschinken</th>
+              <th scope="col">Champignons</th>
+              <th scope="col">Artischocken</th>
+              <th scope="col">Kapern</th>
+              <th scope="col">Spinat</th>
+              <th scope="col">Pouletgeschnetzeltes</th>
+              <th scope="col">Zwiebeln</th>
+              <th scope="col">Gorgonzola</th>
+              <th scope="col">Käsemischung</th>
+              <th scope="col">Paprikapulver</th>
+              <th scope="col">Meeresfrüchte</th>
+              <th scope="col">Ananas</th>
+              <th scope="col">Scharfe Salami</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Margherita</td>
+              <td>normal (24cm)</td>
+              <td class="num">125g</td>
+            <td class="num">100g</td>
+              <td class="num">75g</td>
+              <td class="num">2g</td>
+            <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Margarita</td>
+              <td>Dinolino (30cm)</td>
+              <td class="num">160g</td>
+            <td class="num">140g</td>
+              <td class="num">100g</td>
+              <td class="num">3g</td>
+            <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+         <td>Salame</td>
+              <td>normal (24cm)</td>
+              <td class="num">125g</td>
+            <td class="num">100g</td>
+              <td class="num">75g</td>
+              <td class="num">2g</td>
+            <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td class="num">80g</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+          <th scope="row">4</th>
+         <td>Da Dino</td>
+              <td>normal (24cm)</td>
+              <td class="num">125g</td>
+            <td class="num">100g</td>
+              <td class="num">75g</td>
+              <td class="num">2g</td>
+            <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td class="num">10g</td>
+            <td class="num">40g</td>
+              <td class="num">20g</td>
+            <td>-</td>
+              <td>-</td>
+            <td>-</td>
+            <td class="num">10g</td>
+              <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../HSLU_KETE_21/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="../HSLU_KETE_21/bootstrap/js/dashboard.js"></script>
+  </body>
+</html>
