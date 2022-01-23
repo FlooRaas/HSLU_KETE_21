@@ -317,11 +317,19 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
                     <label for="Hausnummer" class="form-label">Hausnummer</label>
                     <input type="text" class="form-control" id="Hausnummer" placeholder="99" required>
                   </div>
+
+                  <div class="col-md-12">
+                    <label for="Ort" class="form-label">Ort</label>
+                    <input type="text" class="form-control" id="Strasse" placeholder="Regensburg" required>
+                    <div class="invalid-feedback">
+                      Bitte einen korrekten Ort angeben.
+                    </div>
+                  </div>
       
                   <div class="col-md-6">
                     <label for="Land" class="form-label">Land</label>
                     <select class="form-select" id="Land" required>
-                      <option value="">Schweiz</option>
+                      <option value="1">Schweiz</option>
                     </select>
                   </div>
       
